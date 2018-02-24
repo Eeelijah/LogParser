@@ -1,0 +1,32 @@
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <div>
+            <form method="POST" enctype="multipart/form-data" action="/">
+                <table>
+                    <tr><td>Файл с логами:</td><td><input type="file" name="file" /></td></tr>
+                    <tr><td></td><td><input type="submit" value="Анализировать" /></td></tr>
+                </table>
+            </form>
+        </div>
+        <table border="2">
+            <tbody>
+            <tr>
+                <td>текст запроса</td>
+                <td>частота запроса</td>
+                <td>количество пользователей, задававших запрос</td>
+                <td>средняя позиция документа с кликом</td>
+                <td>количество кликов</td>
+                <td>частота запроса без кликов</td>
+            </tr>
+            <tr th:each="mapResult : ${mapResults}">
+                <td th:text="${mapResult.query}"></td>
+                <td th:text="${mapResult.frequency}"></td>
+                <td th:text="${mapResult.userCount}"></td>
+                <td th:text="${mapResult.docPosition}"></td>
+                <td th:text="${mapResult.clickCount}"></td>
+                <td th:text="${mapResult.reqFrequencyWithoutClick}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
