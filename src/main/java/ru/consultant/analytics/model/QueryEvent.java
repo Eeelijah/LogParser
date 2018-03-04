@@ -1,10 +1,6 @@
 package ru.consultant.analytics.model;
 
-
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -13,7 +9,7 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-@ToString
+@EqualsAndHashCode(exclude ={"clickEvents"})
 public class QueryEvent implements Event {
 
     private LocalDate queryDate;

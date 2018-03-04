@@ -1,9 +1,6 @@
 package ru.consultant.analytics.model;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -11,9 +8,10 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
+@EqualsAndHashCode
 public class SessionEntity {
 
-    private Long userId;
+    private Integer userId;
     private LocalDate sessionStart;
     private LocalDate sessionEnd;
     private List<QueryEvent> queryEvents;

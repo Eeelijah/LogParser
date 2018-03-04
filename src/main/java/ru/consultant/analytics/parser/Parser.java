@@ -22,7 +22,7 @@ public class Parser {
 
         String [] splitByTabArray = logString.split("\\t");
 
-        Long userId = Long.parseLong(splitByTabArray[0]);
+        Integer userId = Integer.parseInt(splitByTabArray[0]);
         LocalDate sessionStart = LocalDate.parse(splitByTabArray[1]);
         LocalDate sessionEnd = LocalDate.parse(splitByTabArray[splitByTabArray.length-1]);
 

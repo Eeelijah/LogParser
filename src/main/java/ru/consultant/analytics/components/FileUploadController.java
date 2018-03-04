@@ -21,7 +21,7 @@ public class FileUploadController {
     private StorageService storageService;
 
     @PostMapping("/")
-    public RedirectView handleFileUpload(@RequestParam("file") MultipartFile file, RedirectAttributes redirectAttributes) {
+    public RedirectView handleFileUpload(@RequestParam("file") MultipartFile file, RedirectAttributes redirectAttributes) throws IOException {
         List<MapResult> mapResultList = storageService.store(file);
         redirectAttributes.addFlashAttribute("mapResults", mapResultList);
         return new RedirectView("/", true);

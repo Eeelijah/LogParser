@@ -8,6 +8,6 @@ public class MapperImpl implements Mapper {
 
     @Override
     public void map(String key, String value, Store store) {
-        store.collect(value.trim().toLowerCase(), key);
+        store.collect(key, value.trim().toLowerCase());
     }
 }

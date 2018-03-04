@@ -1,15 +1,12 @@
 package ru.consultant.analytics.model;
 
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 @Getter
 @Setter
 @NoArgsConstructor
-@ToString
+@EqualsAndHashCode(exclude = {"queryEvent"})
 public class ClickEvent implements Event{
 
     private Long docId;
